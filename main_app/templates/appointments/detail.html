@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="card">
-    <div class="card-content">
-        <span class="card-title">{{ appointment.name }}</span>
+<div class="row">
+    <div class="col s6">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Contact Info</span>
+                <p>{{ appointment.name }}
+                <p>{{ appointment.email }}
+                <p>{{ appointment.phone_number }}</p>
+                <hr />
+                <span class="card-title">Job Info</span>
+                <p>{{ appointment.address }}</p>
+                <p>{{ appointment.building_type }}</p>
+                <p>{{ appointment.description }}</p>
+                <p>{{ appointment. }}</p>
+                <span class="right">Submitted on: {{ appointment.date_created }}</span>
+            </div>
+        </div>
     </div>
 </div>
 
