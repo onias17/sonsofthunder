@@ -1,11 +1,16 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Appointment(models.Model):
-    building = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    phone_number = models.BigAutoField
+    email = models.EmailField(max_length=100)
+    building_type = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
     address = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now=False, auto_now_add=False)
+    date_created = models.DateTimeField(auto_now_add=True)
 
 appointments = [
     Appointment('Residential', 'need ligthing fixtures installed in the bathroom', '123 Residential Way', '12/20/20'),

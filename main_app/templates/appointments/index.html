@@ -3,15 +3,14 @@
 
 <h1>Appointments</h1>
 {% for appointment in appointments %}
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title"></span>
-            <p>Building: {{ appointment.building }}</p>
-            <p>Description: {{ appointment.description }}</p>
-            <p>Address: {{ appointment.address }}</p>
-            <p>Date: {{ appointment.date }}</p>
+    <a href="{% url 'detail' appointment.id %}">
+        <div class="card">
+            <div class="card-content">
+                <p>Name: {{ appointment.name }}</p>
+                <p>Date Created: {{ appointment.date_created }}</p>
+            </div>
         </div>
-    </div>
+    </a>
 {% endfor %}
 
 {% endblock %}
