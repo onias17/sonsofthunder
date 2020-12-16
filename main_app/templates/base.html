@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     {% comment %} Materialize CSS {% endcomment %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {% comment %} Materialize JS {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     {% comment %} Fontawesome {% endcomment %}
     <script src="https://kit.fontawesome.com/3bf44e2d43.js" crossorigin="anonymous"></script>
     <title>Sons of Thunder</title>
@@ -21,16 +23,15 @@
                     <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Sons of Thunder</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="/appointments">Appointments</a></li>
-                </ul>
-                <ul class="right">
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-                <ul class="right">
-                    <li><a href="#services">Services</a></li>
-                </ul>
-                <ul class="right">
                     <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'index' %}">Appointments</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                {% endif %}
                 </ul>
             </div>
         </nav>
