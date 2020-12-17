@@ -36,7 +36,6 @@ def add_appointment(request):
         appointment_form = AppointmentForm(request.POST)
         if appointment_form.is_valid():
             new_appointment = appointment_form.save(commit=False)
-            new_appointment.user = request.user
             new_appointment.save()
             return redirect('home')
     else: 
