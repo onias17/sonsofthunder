@@ -11,9 +11,9 @@ BUILDING = (
 
 class Appointment(models.Model):
     name = models.CharField(max_length=100)
-    phone_number = models.CharField(
-        'Phone Number',
-        max_length=12,
+    phone = models.CharField(
+        'Phone Number', 
+        max_length=13
     )
     email = models.EmailField(max_length=100)
     address = models.CharField(max_length=100)
@@ -32,9 +32,5 @@ class Appointment(models.Model):
         auto_now_add=False,
     )
     date_created = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(
-        User, 
-        on_delete=models.CASCADE,
-    )
 
 
