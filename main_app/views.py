@@ -32,17 +32,29 @@ def add_appointment(request):
         if appointment_form.is_valid():
             new_appointment = appointment_form.save(commit=False)
             new_appointment.save()
+            message = loader.render_to_string(
+                    'emails/admin1.html',
+                    {
+                        'name': new_appointment.name,
+                        'phone_number': new_appointment.phone,
+                        'email': new_appointment.email,
+                        'address': new_appointment.address,
+                        'building_type': new_appointment.building_type,
+                        'description': new_appointment.description,
+                        'date_created': new_appointment.date_created,
+                    }
+            )
             mail_admins(
                 "New Inquiry",
                 "test...",
                 fail_silently=False,
                 connection=None,
-                html_message=None,
+                html_message=message,
             )
             html_message = loader.render_to_string(
-                    'appointments/email.html',
+                    'emails/client1.html',
                     {
-                        'subject': 'Thank You, We have received your inquiry!',
+                        'subject': 'Thank you, We have received your inquiry!',
                         'address': new_appointment.address,
                         'building_type': new_appointment.building_type,
                         'description': new_appointment.description,
@@ -50,7 +62,7 @@ def add_appointment(request):
                 )
             send_mail(
                 "Inquiry",
-                "Thank You, we have received your inquiry. ",
+                "Thank you, we have received your inquiry. ",
                 "oniasnephiisrael@gmail.com",
                 [new_appointment.email],
                 fail_silently=False,
@@ -68,6 +80,30 @@ def edit_appointment(request, appointment_id):
         appointment_form = AppointmentForm(request.POST, instance=appointment)
         if appointment_form.is_valid():
             new_appointment = appointment_form.save()
+            mail_admins(
+                "Updateded Inquiry",
+                "test...",
+                fail_silently=False,
+                connection=None,
+                html_message=None,
+            )
+            html_message = loader.render_to_string(
+                    'emails/client2.html',
+                    {
+                        'subject': 'Thank you, your inquiry has been updated!',
+                        'address': new_appointment.address,
+                        'building_type': new_appointment.building_type,
+                        'description': new_appointment.description,
+                    }
+                )
+            send_mail(
+                "Inquiry",
+                "Thank you, we have received your inquiry. ",
+                "oniasnephiisrael@gmail.com",
+                [new_appointment.email],
+                fail_silently=False,
+                html_message=html_message
+            )
             return render(request, 'appointments/update.html')
     else:
         form = AppointmentForm(instance=appointment)

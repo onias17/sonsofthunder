@@ -9,4 +9,17 @@
     <button class="btn" type="submit">Update</button>
 </form>
 
+<script>
+    const dateEl = document.getElementById('id_date');
+    M.Datepicker.init(dateEl, {
+        format: 'mm/dd/yy',
+        defaultDate: new Date(),
+        setDefaultDate: true,
+        autoClose: true
+    }); 
+
+    const selectEl = document.getElementById('id_building_type');
+    M.FormSelect.init(id_building_type);
+</script>
+
 {% endblock %}
