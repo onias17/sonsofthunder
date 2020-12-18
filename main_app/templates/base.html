@@ -9,20 +9,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     {% comment %} Materialize CSS {% endcomment %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {% comment %} Material Icons {% endcomment %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {% comment %} Materialize JS {% endcomment %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     {% comment %} Fontawesome {% endcomment %}
-    <script src="https://kit.fontawesome.com/3bf44e2d43.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/3bf44e2d43.js" crossorigin="anonymous"></script>
     <title>Sons of Thunder</title>
 </head>
 <body>
-    <header class="navbar-fixed">
+    <header class="navbar">
         <nav>
             <div class="nav-wrapper">
-                <ul>
-                    <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Sons of Thunder</a></li>
-                </ul>
-                <ul class="right">
+                <a href="/" class="left brand-logo">Sons of Thunder Electrical</a>
+                <a href="" data-target="mobile-demo" class="right sidenav-trigger" id=""><i class="material-icons">Menu</i></a>
+                <ul class="right hide-on-med-and-down">
                     <li><a href="/#about">About</a></li>
                     <li><a href="/#services">Services</a></li>
                     <li><a href="/#contact">Contact Us</a></li>
@@ -35,6 +36,17 @@
                 </ul>
             </div>
         </nav>
+        <ul class="sidenav" id="mobile-demo">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#contact">Contact Us</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'index' %}">Appointments</a></li>
+                <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+        </ul>
     </header>
     <main class="container">
         {% block content %}
@@ -43,5 +55,10 @@
     <footer class="page-footer">
         <div class="right">All Rights Reserved, &copy; 2020 Sons of Thunder by Onias Israel&nbsp;</div>
     </footer>
+
+    <script>
+        const mobileEl = document.getElementById('mobile-demo');
+        M.Sidenav.init(mobileEl);
+    </script>
 </body>
 </html>

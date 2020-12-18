@@ -54,7 +54,7 @@ def add_appointment(request):
             html_message = loader.render_to_string(
                 'emails/client1.html',
                 {
-                    'subject': 'Thank you, We have received your inquiry!',
+                    'subject': 'We have received your inquiry!',
                     'address': new_appointment.address,
                     'building_type': new_appointment.building_type,
                     'description': new_appointment.description,
@@ -62,7 +62,7 @@ def add_appointment(request):
             )
             send_mail(
                 "Inquiry",
-                "Thank you, we have received your inquiry. ",
+                "We have received your inquiry! ",
                 "oniasnephiisrael@gmail.com",
                 [new_appointment.email],
                 fail_silently=False,
@@ -102,7 +102,7 @@ def edit_appointment(request, appointment_id):
             html_message = loader.render_to_string(
                 'emails/client2.html',
                 {
-                    'subject': 'Thank you, your inquiry has been updated!',
+                    'subject': 'Your inquiry has been updated!',
                     'address': new_appointment.address,
                     'building_type': new_appointment.building_type,
                     'description': new_appointment.description,
@@ -110,7 +110,7 @@ def edit_appointment(request, appointment_id):
             )
             send_mail(
                 "Inquiry",
-                "Thank you, we have received your inquiry. ",
+                "Your inquiry has been updated!",
                 "oniasnephiisrael@gmail.com",
                 [new_appointment.email],
                 fail_silently=False,
