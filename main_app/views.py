@@ -50,7 +50,7 @@ def add_appointment(request):
                 )
             send_mail(
                 "Inquiry",
-                "Thank You, We have received your inquiry! ",
+                "Thank You, we have received your inquiry. ",
                 "oniasnephiisrael@gmail.com",
                 [new_appointment.email],
                 fail_silently=False,
@@ -62,17 +62,17 @@ def add_appointment(request):
         context = { 'form': form }
         return render(request, 'appointments/new.html', context)
 
-# def edit_appointment(request, appointment_id):
-#     appointment = Appointment.objects.get(id=appointment_id)
-#     if request.method == 'POST':
-#         appointment_form = AppointmentForm(request.POST, instance=appointment)
-#         if appointment_form.is_valid():
-#             new_appointment = appointment_form.save()
-#             return render(request, 'appointments/update.html')
-#     else:
-#         form = AppointmentForm(instance=appointment)
-#         context = { 'form': form }
-#         return render(request, 'appointments/edit.html', context) 
+def edit_appointment(request, appointment_id):
+    appointment = Appointment.objects.get(id=appointment_id)
+    if request.method == 'POST':
+        appointment_form = AppointmentForm(request.POST, instance=appointment)
+        if appointment_form.is_valid():
+            new_appointment = appointment_form.save()
+            return render(request, 'appointments/update.html')
+    else:
+        form = AppointmentForm(instance=appointment)
+        context = { 'form': form }
+        return render(request, 'appointments/edit.html', context) 
 
 @login_required
 def delete_appointment(request, appointment_id):

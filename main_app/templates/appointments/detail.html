@@ -18,6 +18,7 @@
                 <span class="right">Submitted on: {{ appointment.date_created }}</span>
             </div>
             <div class="card-action">
+                <a href="{% url 'edit_appointment' appointment.id %}" class="btn">Edit</a>
                 <a href="{% url 'delete_appointment' appointment.id %}" class="btn">Delete</a>
             </div>
         </div>
