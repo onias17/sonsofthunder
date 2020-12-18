@@ -4,14 +4,13 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
-    # path('services/', views.services, name='services'),
-
     # APPOINTMENT ROUTES
     path('appointments/', views.appointments_index, name='index'),
-    path('appointments/<int:appointment_id>/', views.appointments_detail, name='detail'),
     path('appointments/new/', views.add_appointment, name='add_appointment'),
+    path('appointments/<int:appointment_id>/', views.appointments_detail, name='detail'),
+    # path('appointments/<int:appointment_id>/edit/', views.edit_appointment, name='edit_appointment'),
     path('appointments/<int:appointment_id>/delete/', views.delete_appointment, name='delete_appointment'),
-    # path('appointments/success/', views.appointment_success, name='success')
+    path('appointments/success/', views.appointment_success, name='success')
     # AUTH
     
 ]

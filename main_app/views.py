@@ -5,6 +5,7 @@ from .forms import AppointmentForm
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail, mail_admins
 from django.conf import settings
+from django.template import loader
 
 # HOME and ABOUT
 def home(request):
@@ -38,20 +39,45 @@ def add_appointment(request):
                 connection=None,
                 html_message=None,
             )
+            html_message = loader.render_to_string(
+                    'appointments/email.html',
+                    {
+                        'subject': 'Thank You, We have received your inquiry!',
+                        'address': new_appointment.address,
+                        'building_type': new_appointment.building_type,
+                        'description': new_appointment.description,
+                    }
+                )
             send_mail(
                 "Inquiry",
-                "Thank You! We have received your inquiry! " + new_appointment.address + "" + new_appointment.building_type + "" + new_appointment.description,
+                "Thank You, We have received your inquiry! ",
                 "oniasnephiisrael@gmail.com",
                 [new_appointment.email],
                 fail_silently=False,
+                html_message=html_message
             )
-            return redirect('home')
+            return render(request, 'appointments/success.html')
     else: 
         form = AppointmentForm()
         context = { 'form': form }
         return render(request, 'appointments/new.html', context)
 
+# def edit_appointment(request, appointment_id):
+#     appointment = Appointment.objects.get(id=appointment_id)
+#     if request.method == 'POST':
+#         appointment_form = AppointmentForm(request.POST, instance=appointment)
+#         if appointment_form.is_valid():
+#             new_appointment = appointment_form.save()
+#             return render(request, 'appointments/update.html')
+#     else:
+#         form = AppointmentForm(instance=appointment)
+#         context = { 'form': form }
+#         return render(request, 'appointments/edit.html', context) 
+
 @login_required
 def delete_appointment(request, appointment_id):
     Appointment.objects.get(id=appointment_id).delete()
     return redirect('home')    
+
+def appointment_success(request):
+    return render(request, 'appointments/success.html')
