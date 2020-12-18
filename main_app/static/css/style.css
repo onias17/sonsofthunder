@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: #d7d7b9;
     display: flex;
     min-height: 100vh;
@@ -7,14 +7,64 @@ body {
 
 main {
     flex: 1 0 auto;
-}
+} */
 
 /* HEADER */
-.style:active {
+/* .style:active {
     opacity: 0;
 }
 
 footer {
     padding-top: 0;
     text-align: right;
+} */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: white;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: white;
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
 }
