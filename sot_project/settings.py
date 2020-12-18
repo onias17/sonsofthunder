@@ -127,14 +127,14 @@ LOGOUT_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'oniasnephiisrael@gmail.com'
-EMAIL_HOST_PASSWORD = 'Onbi2019'
+EMAIL_HOST_USER = '' # pending
+EMAIL_HOST_PASSWORD = '' # pending
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Onias'
+DEFAULT_FROM_EMAIL = 'SOT'
 
 EMAIL_SUBJECT_PREFIX = ''
-SERVER_EMAIL = 'oniasnephiisrael@gmail.com'
+SERVER_EMAIL = 'gmail'
 ADMINS = (
-    ('Onias', 'oniasnephiisrael@gmail.com'),
-)
+    ('Onias', 'gmail'), ('Officer', 'gmail')
+) 

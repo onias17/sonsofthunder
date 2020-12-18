@@ -81,7 +81,7 @@ def edit_appointment(request, appointment_id):
         if appointment_form.is_valid():
             new_appointment = appointment_form.save()
             message = loader.render_to_string(
-                'emails/admin1.html',
+                'emails/admin2.html',
                 {
                     'name': new_appointment.name,
                     'phone_number': new_appointment.phone,
