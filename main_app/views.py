@@ -33,16 +33,16 @@ def add_appointment(request):
             new_appointment = appointment_form.save(commit=False)
             new_appointment.save()
             message = loader.render_to_string(
-                    'emails/admin1.html',
-                    {
-                        'name': new_appointment.name,
-                        'phone_number': new_appointment.phone,
-                        'email': new_appointment.email,
-                        'address': new_appointment.address,
-                        'building_type': new_appointment.building_type,
-                        'description': new_appointment.description,
-                        'date_created': new_appointment.date_created,
-                    }
+                'emails/admin1.html',
+                {
+                    'name': new_appointment.name,
+                    'phone_number': new_appointment.phone,
+                    'email': new_appointment.email,
+                    'address': new_appointment.address,
+                    'building_type': new_appointment.building_type,
+                    'description': new_appointment.description,
+                    'date_created': new_appointment.date_created,
+                }
             )
             mail_admins(
                 "New Inquiry",
@@ -52,14 +52,14 @@ def add_appointment(request):
                 html_message=message,
             )
             html_message = loader.render_to_string(
-                    'emails/client1.html',
-                    {
-                        'subject': 'Thank you, We have received your inquiry!',
-                        'address': new_appointment.address,
-                        'building_type': new_appointment.building_type,
-                        'description': new_appointment.description,
-                    }
-                )
+                'emails/client1.html',
+                {
+                    'subject': 'Thank you, We have received your inquiry!',
+                    'address': new_appointment.address,
+                    'building_type': new_appointment.building_type,
+                    'description': new_appointment.description,
+                }
+            )
             send_mail(
                 "Inquiry",
                 "Thank you, we have received your inquiry. ",
@@ -80,22 +80,34 @@ def edit_appointment(request, appointment_id):
         appointment_form = AppointmentForm(request.POST, instance=appointment)
         if appointment_form.is_valid():
             new_appointment = appointment_form.save()
+            message = loader.render_to_string(
+                'emails/admin1.html',
+                {
+                    'name': new_appointment.name,
+                    'phone_number': new_appointment.phone,
+                    'email': new_appointment.email,
+                    'address': new_appointment.address,
+                    'building_type': new_appointment.building_type,
+                    'description': new_appointment.description,
+                    'date_created': new_appointment.date_created,
+                }
+            )
             mail_admins(
                 "Updateded Inquiry",
                 "test...",
                 fail_silently=False,
                 connection=None,
-                html_message=None,
+                html_message=message,
             )
             html_message = loader.render_to_string(
-                    'emails/client2.html',
-                    {
-                        'subject': 'Thank you, your inquiry has been updated!',
-                        'address': new_appointment.address,
-                        'building_type': new_appointment.building_type,
-                        'description': new_appointment.description,
-                    }
-                )
+                'emails/client2.html',
+                {
+                    'subject': 'Thank you, your inquiry has been updated!',
+                    'address': new_appointment.address,
+                    'building_type': new_appointment.building_type,
+                    'description': new_appointment.description,
+                }
+            )
             send_mail(
                 "Inquiry",
                 "Thank you, we have received your inquiry. ",
