@@ -8,7 +8,7 @@
                 <span class="card-title">Contact Info</span>
                 <p>{{ appointment.name }}
                 <p>{{ appointment.email }}
-                <p>{{ appointment.phone_number }}</p>
+                <p>{{ appointment.phone }}</p>
                 <hr />
                 <span class="card-title">Job Info</span>
                 <p>{{ appointment.address }}</p>
@@ -16,6 +16,9 @@
                 <p>{{ appointment.description }}</p>
                 <p>{{ appointment. }}</p>
                 <span class="right">Submitted on: {{ appointment.date_created }}</span>
+            </div>
+            <div class="card-action">
+                <a href="{% url 'delete_appointment' appointment.id %}" class="btn">Delete</a>
             </div>
         </div>
     </div>

@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Appointment
 from .forms import AppointmentForm
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail, mail_admins
+from django.conf import settings
 
 # HOME and ABOUT
 def home(request):
@@ -14,16 +16,8 @@ def about(request):
 # APPOINTMENTS
 @login_required
 def appointments_index(request):
-    if request.method == 'POST':
-        appointment_form = AppointmentForm(request.POST)
-        if appointments_form.is_valid():
-            new_appointment = appointment_form.save(commit=False)
-            new_appointment.user = request.user
-            new_appointment.save()
-            return redirect('appointments_index')
     appointments = Appointment.objects.all()
-    appointment_form = AppointmentForm()
-    context = { 'appointments': appointments, 'appointment_form': appointment_form }
+    context = { 'appointments': appointments }
     return render(request, 'appointments/index.html', context)
 
 @login_required
@@ -37,8 +31,27 @@ def add_appointment(request):
         if appointment_form.is_valid():
             new_appointment = appointment_form.save(commit=False)
             new_appointment.save()
+            mail_admins(
+                "New Inquiry",
+                "test...",
+                fail_silently=False,
+                connection=None,
+                html_message=None,
+            )
+            send_mail(
+                "Inquiry",
+                "Thank You! We have received your inquiry! " + new_appointment.address + "" + new_appointment.building_type + "" + new_appointment.description,
+                "oniasnephiisrael@gmail.com",
+                [new_appointment.email],
+                fail_silently=False,
+            )
             return redirect('home')
     else: 
         form = AppointmentForm()
         context = { 'form': form }
         return render(request, 'appointments/new.html', context)
+
+@login_required
+def delete_appointment(request, appointment_id):
+    Appointment.objects.get(id=appointment_id).delete()
+    return redirect('home')    

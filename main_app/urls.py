@@ -10,7 +10,8 @@ urlpatterns = [
     path('appointments/', views.appointments_index, name='index'),
     path('appointments/<int:appointment_id>/', views.appointments_detail, name='detail'),
     path('appointments/new/', views.add_appointment, name='add_appointment'),
-
+    path('appointments/<int:appointment_id>/delete/', views.delete_appointment, name='delete_appointment'),
+    # path('appointments/success/', views.appointment_success, name='success')
     # AUTH
     
 ]
