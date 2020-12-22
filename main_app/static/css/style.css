@@ -1,7 +1,7 @@
 body {
     background-color: #eeeeee;
     display: flex;
-    min-height: 100vh;
+    min-height: 100%;
     flex-direction: column;
 }
 
@@ -30,6 +30,10 @@ p {
 
 .sidenav-trigger {
   color: white;
+}
+
+.sidenav {
+  background-color: #eeeeee !important;
 }
 
 .parallax-container {
@@ -65,11 +69,12 @@ p {
   font-size: inherit;
 }
 
-/* LOGIN */
+/* ---------- LOGIN */
 #login {
   min-height: 100vh;
 }
 
+/* ---------- HOME */
 .about-head {
   margin-top: 35px;
   margin-bottom: 20px;
@@ -78,6 +83,11 @@ p {
 .services-head {
   margin-top: 35px;
   margin-bottom: 20px;
+}
+
+.here:hover {
+  text-decoration: underline;
+  font-size: large;
 }
 
 .contact-head {
@@ -134,4 +144,59 @@ footer.page-footer {
   border: solid #ffc400 !important;
   border-radius: 1px !important;
   background-color: rgba(0,0,0,0) !important;
+}
+
+.btn-large:hover {
+  background-color: #ffc400 !important;
+}
+
+#myBtn {
+  display: none;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 50px; /* Place the button at the bottom of the page */
+  left: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #ffc400; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+/* ---------- NEW */
+#new {
+  min-height: 100vh;
+}
+
+input {
+  background-color: #eeeeee !important;
+}
+
+/* ---------- INDEX */
+#all {
+  min-height: 100vh;
+}
+
+.card {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.card .card-content {
+  border: black solid 1px;
+}
+
+/* DETAIL */
+#single {
+  min-height: 100vh;
+}
+
+.card .card-action:last-child {
+  border: black solid 1px;
+}
+
+.btn:hover {
+  background-color: #ffc400 !important;
 }

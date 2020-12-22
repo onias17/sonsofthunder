@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container inquiry">
+<div class="container inquiry" id="new">
     <h1>Create An Inquiry</h1>
     <form action="{% url 'add_appointment' %}" method="post">
         {% csrf_token %}

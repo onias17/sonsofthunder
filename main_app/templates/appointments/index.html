@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
+<div class="container" id="all">
     <h1>Appointments</h1>
     {% for appointment in appointments %}
-        <a href="{% url 'detail' appointment.id %}">
+        <a href="{% url 'detail' appointment.id %}" class="black-text">
             <div class="card">
                 <div class="card-content">
                     <p>Name: {{ appointment.name }}</p>
