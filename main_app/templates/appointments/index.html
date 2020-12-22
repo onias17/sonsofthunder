@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Appointments</h1>
-{% for appointment in appointments %}
-    <a href="{% url 'detail' appointment.id %}">
-        <div class="card">
-            <div class="card-content">
-                <p>Name: {{ appointment.name }}</p>
-                <p>Date Created: {{ appointment.date_created }}</p>
+<div class="container">
+    <h1>Appointments</h1>
+    {% for appointment in appointments %}
+        <a href="{% url 'detail' appointment.id %}">
+            <div class="card">
+                <div class="card-content">
+                    <p>Name: {{ appointment.name }}</p>
+                    <p>Date Created: {{ appointment.date_created }}</p>
+                </div>
             </div>
-        </div>
-    </a>
-{% endfor %}
+        </a>
+    {% endfor %}
+</div>
 
 {% endblock %}

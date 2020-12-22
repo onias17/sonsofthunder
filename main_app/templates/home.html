@@ -11,42 +11,55 @@
                 <h5 class="header col s12 light">Proud to provide high quality and reliable electrical services you can trust!</h5>
             </div>
             <div class="row center">
-                <a href="{% url 'add_appointment' %}" id="download-button" class="btn-large waves-effect waves-light amber accent-3">Submit Inquiry</a>
+                <a href="{% url 'add_appointment' %}" id="download-button" class="btn-large waves-effect waves-light" id="">Submit Inquiry</a>
             </div>
             <br><br>
 
         </div>
-    <div class="parallax" id="parallax" style=""><img class="responsive-img" src="static/images/elecbg1.jpg" alt="bg 1"></div>
+    <div class="parallax" id="parallax" style=""><img class="responsive-img" src="static/images/elecbg1.jpeg" alt="bg 1"></div>
     </div>
 </section>
 
 {% comment %} ABOUT {% endcomment %}
-<section class="about parallax-container" id="about">
-    <h2 class="center">About</h2>
+<section class="about container" id="about">
+    <h2 class="center about-head">About</h2>
     <div class="row">
         <div class="col s12 m6">
-            <img class="responsive-img" src="static/images/sot_icon1.png" alt="icon" width="">
+            <img class="" src="static/images/sot_icon1.png" alt="icon" width="200px">
+            <h5>Efrain De Leon</h5>
+            <p>OWNER</p>
         </div>
         <div class="col s12 m6">
-            <h4 class="center">Sons of Thunder Electric</h4>
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+            <p>At Sons of Thunder Electrical, our mission is to provide the community with the best electrical services that will satisfy the needs and expectations of all oour customers. With 20+ years of electrical experience, owner Efrain De Leon takes pride in giving nothing less than the best services around!</p>
         </div>
     </div>
-    <hr />
+</section>
+
+<section class="parallax-container valign-wrapper" id="index-banner">
+    <div class="parallax" id="parallax2"><img class="responsive-img" src="static/images/elecbg3.jpeg" style="translate3d(-50%, 318.67px, 0px); opacity: 1;" alt="bg 3"></div>
 </section>
 
 {% comment %} SERVICES {% endcomment %}
-<section class="services" id="services">
-    <h2 class="center">Services</h2>
+<section class="services container" id="services">
+    <h2 class="center services-head">Services</h2>
         <div class="row center">
             <div class="col s4">
-                <p>RESIDENTIAL</p>
+                <div>
+                    <h2><i class="medium material-icons amber-text accent-3">home</i></h2>
+                    <h5>RESIDENTIAL</h5>
+                </div>
             </div>
             <div class="col s4">
-                <p>COMMERCIAL</p>
+                <div>
+                    <h2><i class="medium material-icons amber-text accent-3">store</i></h2>
+                    <h5>COMMERCIAL</h5>
+                </div>
             </div>
             <div class="col s4">
-                <p>INDUSTRIAL</p>
+                <div>
+                    <h2><i class="medium material-icons amber-text accent-3">business</i></h2>
+                    <h5>INDUSTRIAL</h5>
+                </div>
             </div>
         </div>
         <ul class="elec-services">
@@ -63,8 +76,8 @@
             <li>Underground Electrical Trenching</li>
             <li>And Much More...</li>
         </ul>
-        <span class="right">Need electrical work done? Click <a href="{% url 'add_appointment' %}">here</a></span>
-        <br />
+        <span class="right">Need electrical services? Click <a href="{% url 'add_appointment' %}">here</a></span>
+        <br>
         <div class="row">
             <div class="col s6">
                 <img src="" alt="">
@@ -81,43 +94,46 @@
                 <img src="" alt="">
             </div>
         </div>
-        <hr />
 </section>
 
-{% comment %} CONTACT {% endcomment %}
-<section class="contact" id="contact">
-    <h2 class="center">Contact Us</h2>
-    <div class="row">
-        <div class="col s12 m6">
-            <div>
-                <h5>PHONE NUMBER</h5>
-                <p>(760) 662-1909</p>
-                <h5>EMAIL</h5>
-                <p><a href="" target="_blank">sonsofthundereletric@gmail.com</a></p>
-                <h5>HOURS OF OPERATION</h5>
-                <p>Monday - Friday: 8am - 5pm</p>
-                <h5>SOCIAL MEDIA</h5>
-                <div class="social-media">
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-facebook"></i></a>
-                    <a href=""><i class="fab fa-twitter"></i></a>
-                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+<section class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="contact container" id="contact">
+                <h2 class="center contact-head">Contact Us</h2>
+                <div>
+                    <p>Phone Number <span class="bold">(760) 662-1909</span></p>
+                    <p>Email <a href="" target="_blank" class="email">sonsofthundereletrical@gmail.com</a></p>
+                    <p>Social Media
+                        <span class="social-media">
+                            <a href=""><i class="small fab fa-facebook"></i></a>
+                            <a href=""><i class="small fab fa-instagram"></i></a>
+                            <a href=""><i class="small fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="small fab fa-twitter"></i></a>
+                        </span>
+                    </p>
+                </div>
+                <div class="center">
+                    <h6>Areas of Services</h6>
+                    <p>Fontana | Ontario | Rancho Cucamango | Riverside | San Bernandino</p>
                 </div>
             </div>
         </div>
-        <div class="col s12 m6">
-            <div class="center">
-                <img class="responsive-img" src="static/images/ie_map.jpg" alt="map" width="400px" height="">
-                <h6>Areas of Services</h6>
-                <p>Fontana | Ontario | Rancho Cucamango | Riverside | San Bernandino</p>
-            </div>
-        </div>
     </div>
+    <div class="parallax" id="parallax3"><img class="responsive-img" src="static/images/elecbg2.jpeg" style="translate3d(-50%, 318.67px, 0px); opacity: 1;" alt="bg 2"></div>
 </section>
+
+{% comment %} CONTACT {% endcomment %}
 
 <script>
     const paraEl = document.getElementById('parallax');
     M.Parallax.init(paraEl);
+
+    const para2El = document.getElementById('parallax2');
+    M.Parallax.init(para2El);
+    
+    const para3El = document.getElementById('parallax3');
+    M.Parallax.init(para3El);
 </script>
 
 {% endblock %}

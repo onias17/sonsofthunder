@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Edit Inquiry</h1>
-
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn" type="submit">Update</button>
-</form>
+<div class="container">
+    <h1>Edit Inquiry</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn black-text" type="submit">Update</button>
+    </form>
+</div>
 
 <script>
     const dateEl = document.getElementById('id_date');
