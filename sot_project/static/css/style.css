@@ -1,0 +1,214 @@
+body {
+    background-color: #eeeeee;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+/* main {
+    flex: 1 0 auto;
+} */
+
+/* HEADER */
+/* .style:active {
+    opacity: 0;
+}
+
+footer {
+    padding-top: 0;
+    text-align: right;
+} */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: white;
+}
+
+.sidenav {
+  background-color: #eeeeee !important;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: white;
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+/* ---------- LOGIN */
+#login {
+  min-height: 100vh;
+}
+
+/* ---------- HOME */
+.about-head {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.services-head {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.ser-img {
+  box-shadow: -7px 7px 7px rgba(255, 196, 0, .5);
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.ser-img2 {
+  box-shadow: 7px 7px 7px rgba(255, 196, 0, .5);
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.here:hover {
+  text-decoration: underline;
+  font-size: large;
+}
+
+.contact-head {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.bold {
+  color: #ffc400;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.bold:hover {
+  font-size: large;
+}
+
+.email {
+  color: #ffc400;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.email:hover {
+  text-decoration: underline;
+  font-size: large;
+}
+
+.social-media {
+  letter-spacing: 2px;
+}
+
+.fa-instagram {
+  color:  #517fa4;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-twitter {
+  color: #00aced;
+}
+
+.fa-linkedin-in {
+  color: #007bb6;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.btn, .btn-large, .btn-small, .btn-flat {
+  border: solid #ffc400 !important;
+  border-radius: 1px !important;
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.btn-large:hover {
+  background-color: #ffc400 !important;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  left: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #ffc400;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%; 
+  font-size: 18px;
+}
+
+/* ---------- NEW */
+#new {
+  min-height: 100vh;
+}
+
+input {
+  background-color: #eeeeee !important;
+}
+
+/* ---------- INDEX */
+#all {
+  min-height: 100vh;
+}
+
+.card {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.card .card-content {
+  border: black solid 1px;
+}
+
+/* DETAIL */
+#single {
+  min-height: 100vh;
+}
+
+.card .card-action:last-child {
+  border: black solid 1px;
+}
+
+.btn:hover {
+  background-color: #ffc400 !important;
+}
