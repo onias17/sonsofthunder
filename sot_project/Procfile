@@ -1,1 +1,1 @@
-web: gunicorn sot_project.wsgi --log-file -
+web: gunicorn sot_project.wsgi
