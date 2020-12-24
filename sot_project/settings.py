@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+import django_on_heroku
 
 from pathlib import Path
 
@@ -145,3 +146,5 @@ SERVER_EMAIL = 'gmail'
 ADMINS = (
     ('Onias', 'gmail'), ('Officer', 'gmail')
 ) 
+
+django_on_heroku.settings(locals())

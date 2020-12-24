@@ -15,7 +15,6 @@
                 <a href="{% url 'add_appointment' %}" id="download-button" class="btn-large waves-effect waves-light" id="">Submit Inquiry</a>
             </div>
             <br><br>
-
         </div>
     <div class="parallax" id="parallax" style=""><img class="responsive-img" src="static/images/elecbg1.jpeg" alt="bg 1"></div>
     </div>
@@ -63,37 +62,70 @@
                 </div>
             </div>
         </div>
-        <ul class="elec-services">
-            <li>Complete Remodeling</li>
-            <li>Electrical Wiring</li>
-            <li>House Rewiring</li>
-            <li>Lighting Installation</li>
-            <li>Maintenance</li>
-            <li>New Construction</li>
-            <li>Outlets and Switches</li>
-            <li>Panel Upgrades</li>
-            <li>Repairs</li>
-            <li>Surge Protection</li>
-            <li>Underground Electrical Trenching</li>
-            <li>And Much More...</li>
-        </ul>
-        <span class="right">Need electrical services? Click <a href="{% url 'add_appointment' %}" class="amber-text accent-3 here">here</a></span>
-        <br>
         <div class="row">
-            <div class="col s6">
-                <img src="" alt="">
+            <div class="col s12 m4">  
+                <ul class="elec-services">
+                    <li>Complete Remodeling</li>
+                    <li>Electrical Wiring</li>
+                    <li>House Rewiring</li>
+                    <li>Lighting Installation</li>
+                    <li>Maintenance</li>
+                    <li>New Construction</li>
+                    <li>Outlets and Switches</li>
+                    <li>Panel Upgrades</li>
+                    <li>Repairs</li>
+                    <li>Surge Protection</li>
+                    <li>Underground Electrical Trenching</li>
+                    <li>And Much More...</li>
+                </ul>
             </div>
-            <div class="col s6">
-                <img src="" alt="">
+            <div class="col s12 m8 center">
+                <img class="carousel-item ser-img" src="static/images/panel_after.jpeg" alt="" width="500px" height="500px">
             </div>
         </div>
         <div class="row">
-            <div class="col s6">
-                <img src="" alt="">
+            <div class="col s12 m8 center">
+                <img class="carousel-item ser-img2" src="static/images/remodel_after.jpeg" alt="" width="500px" height="500px">
             </div>
-            <div class="col s6">
-                <img src="" alt="">
+            <div class="col s12 m4">  
+                <ul class="elec-services">
+                    <li>Complete Remodeling</li>
+                    <li>Electrical Wiring</li>
+                    <li>House Rewiring</li>
+                    <li>Lighting Installation</li>
+                    <li>Maintenance</li>
+                    <li>New Construction</li>
+                    <li>Outlets and Switches</li>
+                    <li>Panel Upgrades</li>
+                    <li>Repairs</li>
+                    <li>Surge Protection</li>
+                    <li>Underground Electrical Trenching</li>
+                    <li>And Much More...</li>
+                </ul>
             </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m4">  
+                <ul class="elec-services">
+                    <li>Complete Remodeling</li>
+                    <li>Electrical Wiring</li>
+                    <li>House Rewiring</li>
+                    <li>Lighting Installation</li>
+                    <li>Maintenance</li>
+                    <li>New Construction</li>
+                    <li>Outlets and Switches</li>
+                    <li>Panel Upgrades</li>
+                    <li>Repairs</li>
+                    <li>Surge Protection</li>
+                    <li>Underground Electrical Trenching</li>
+                    <li>And Much More...</li>
+                </ul>
+            </div>
+            <div class="col s12 m8 center">
+                <img class="carousel-item ser-img" src="static/images/trenching.jpeg" alt="" width="500px" height="500px">
+            </div>
+            <br>
+            <span class="right">Need electrical services? Click <a href="{% url 'add_appointment' %}" class="amber-text accent-3 here">here</a></span>
         </div>
 </section>
 
@@ -135,6 +167,18 @@
     
     const para3El = document.getElementById('parallax3');
     M.Parallax.init(para3El);
+
+    {% comment %} CAROUSEL {% endcomment %}
+    const carEl = document.getElementById('carousel');
+    M.Carousel.init(carEl, {
+        duration: 150,
+        fullWidth: true,
+        indicators: true,
+    });
+
+    {% comment %} setInterval(() => {
+        carInit(carEl[0]).next();
+    }, 3000); {% endcomment %}
 
     {% comment %} TOP BUTTON {% endcomment %}
     const mybutton = document.getElementById("myBtn");
