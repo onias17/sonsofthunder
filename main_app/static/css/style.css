@@ -159,13 +159,13 @@ footer.page-footer {
   text-decoration: underline;
 }
 
-.btn, .btn-large, .btn-small, .btn-flat {
+.inq {
   border: solid #ffc400 !important;
   border-radius: 1px !important;
   background-color: rgba(0,0,0,0) !important;
 }
 
-.btn-large:hover {
+.inq:hover {
   background-color: #ffc400 !important;
 }
 
@@ -235,6 +235,12 @@ input:-internal-autofill-selected {
   color: black !important;
 }
 
+/* ---------- EDIT */
+#update {
+  min-height: 100vh;
+  margin-bottom: 30px;
+}
+
 /* ---------- INDEX */
 #all {
   min-height: 100vh;
@@ -248,7 +254,7 @@ input:-internal-autofill-selected {
   border: black solid 1px;
 }
 
-/* DETAIL */
+/* ---------- DETAIL */
 #single {
   min-height: 100vh;
 }
@@ -257,6 +263,6 @@ input:-internal-autofill-selected {
   border: black solid 1px;
 }
 
-.btn:hover {
+.btn {
   background-color: #ffc400 !important;
 }

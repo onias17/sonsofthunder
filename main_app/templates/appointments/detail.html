@@ -17,11 +17,13 @@
                     <p>{{ appointment.building_type }}</p>
                     <p>{{ appointment.description }}</p>
                     <p>{{ appointment. }}</p>
-                    <span class="right">Submitted on: {{ appointment.date_created }}</span>
-                </div>
-                <div class="card-action">
-                    <a href="{% url 'edit_appointment' appointment.id %}" class="btn black-text">Edit</a>
-                    <a href="{% url 'delete_appointment' appointment.id %}" class="btn black-text">Delete</a>
+                    <p>Submitted on: {{ appointment.date_created }}</p>
+                    <br />
+                    <span class="right">
+                        <a href="{% url 'edit_appointment' appointment.id %}" class="btn black-text">Edit</a>
+                        <a href="{% url 'delete_appointment' appointment.id %}" class="btn black-text">Delete</a>
+                    </span>
+                    <br />
                 </div>
             </div>
         </div>
