@@ -125,7 +125,9 @@ def edit_appointment(request, appointment_id):
 @login_required
 def delete_appointment(request, appointment_id):
     Appointment.objects.get(id=appointment_id).delete()
-    return redirect('home')    
+    appointments = Appointment.objects.all()
+    context = { 'appointments': appointments }
+    return render(request, 'appointments/index.html', context)    
 
 def appointment_success(request):
     return render(request, 'appointments/success.html')
