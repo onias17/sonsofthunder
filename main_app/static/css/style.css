@@ -156,6 +156,18 @@ footer.page-footer {
   margin: 0;
 }
 
+.page-footer {
+  padding-bottom: 20px;
+}
+
+.profile {
+  color: white;
+}
+
+.profile:hover {
+  text-decoration: underline;
+}
+
 .btn, .btn-large, .btn-small, .btn-flat {
   border: solid #ffc400 !important;
   border-radius: 1px !important;
