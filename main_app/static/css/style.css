@@ -75,6 +75,12 @@ p {
   margin-bottom: 20px;
 }
 
+@media (max-width: 450px) {
+  .building {
+    display: none;
+  }
+}
+
 .carousel .carousel-item {
   width: 300px !important;
   height: 300px !important;
