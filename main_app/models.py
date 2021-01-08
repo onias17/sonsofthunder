@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 BUILDING = (
-    ('R', 'Residential'),
-    ('C', 'Commercial'),
-    ('I', 'Industrial'),
+    ('Residential', 'Residential'),
+    ('Commercial', 'Commercial'),
+    ('Industrial', 'Industrial'),
 )
 
 class Appointment(models.Model):
@@ -19,7 +19,7 @@ class Appointment(models.Model):
     address = models.CharField(max_length=100)
     building_type = models.CharField(
         'Building Type',
-        max_length=1,
+        max_length=11,
         choices=BUILDING,
     )
     description = models.TextField(
