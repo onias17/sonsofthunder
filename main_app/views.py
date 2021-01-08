@@ -131,3 +131,6 @@ def delete_appointment(request, appointment_id):
 
 def appointment_success(request):
     return render(request, 'appointments/success.html')
+
+def appointment_update(request):
+    return render(request, 'appointments/update.html')
