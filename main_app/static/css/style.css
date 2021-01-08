@@ -75,16 +75,9 @@ p {
   margin-bottom: 20px;
 }
 
-.ser-img {
-  box-shadow: -7px 7px 7px rgba(255, 196, 0, .5);
-  border-bottom-left-radius: 50px;
-  border-top-right-radius: 50px;
-}
-
-.ser-img2 {
-  box-shadow: 7px 7px 7px rgba(255, 196, 0, .5);
-  border-bottom-right-radius: 50px;
-  border-top-left-radius: 50px;
+.carousel .carousel-item {
+  width: 300px !important;
+  height: 300px !important;
 }
 
 .here:hover {
@@ -95,10 +88,6 @@ p {
 .contact-head {
   margin-top: 35px;
   margin-bottom: 20px;
-}
-
-.para {
-  padding: 0;
 }
 
 .bold {
