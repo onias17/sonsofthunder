@@ -97,7 +97,7 @@
         <h2 class="center contact-head">Contact Us</h2>
         <div>
             <p>Phone Number <span class="bold">(760) 662-1909</span></p>
-            <p>Email <a href="" target="_blank" class="email">sonsofthundereletrical@gmail.com</a></p>
+            <p>Email <a href="mailto:" target="_blank" class="email">sonsofthundereletrical@gmail.com</a></p>
             <p>Social Media
                 <span class="social-media">
                     <a href=""><i class="small fab fa-facebook"></i></a>
@@ -114,8 +114,6 @@
     </div>
     <div class="parallax" id="parallax3"><img class="responsive-img" src="static/images/elecbg2.jpeg" style="translate3d(-50%, 318.67px, 0px); opacity: 1;" alt="bg 2"></div>
 </section>
-
-<button onclick="topFunction()" class="material-icons" id="myBtn" title="Go to top">keyboard_arrow_up</button>
 
 <script>
     {% comment %} PARALLAX {% endcomment %}
@@ -137,22 +135,6 @@
 
     let instance = M.Carousel.getInstance('carEl');
     instance.next();
-
-    {% comment %} TOP BUTTON {% endcomment %}
-    const mybutton = document.getElementById("myBtn");
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    function topFunction() {
-        document.documentElement.scrollTop = 0;
-    }
 </script>
 
 {% endblock %}
