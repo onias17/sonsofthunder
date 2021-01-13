@@ -70,6 +70,14 @@ p {
   margin-bottom: 20px;
 }
 
+.leon {
+  margin-top: 25px;
+}
+
+.prof-img {
+  filter: drop-shadow(0 0 30px rgb(151, 149, 149))
+}
+
 .services-head {
   margin-top: 35px;
   margin-bottom: 20px;
